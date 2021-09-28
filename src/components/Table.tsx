@@ -2,7 +2,6 @@ import { TodoItem } from "models/Interfaces";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import getData from "services/Services";
-import PropTypes from 'prop-types';
 
 function TodoTable() {
   const [todoList, setTodoList] = useState<TodoItem[]>([]);
