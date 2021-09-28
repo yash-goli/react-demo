@@ -1,4 +1,4 @@
-import { SearchFormData, TodoPayLoad } from "models/Interfaces";
+import { SearchFormData, TodoPayLoad } from "models/interfaces";
 import { ActionType } from "../action-types";
 
 interface SearchAction {

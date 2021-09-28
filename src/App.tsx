@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import './App.css';
 import SearchForm from 'components/Form';
 import TodoTable from 'components/Table';
-import { SearchFormData, SelectOptionsEnum } from 'models/Interfaces';
+import { SearchFormData, SelectOptionsEnum } from 'models/interfaces';
 import { SearchContext } from 'context/searchContext';
 
 function App() {
@@ -16,16 +16,20 @@ function App() {
 
   return (
     <React.Fragment>
-      <SearchContext.Provider value={{formData, setData}}>
-        <Container fluid="md">
-          <Row>
-            <h3 >Todos</h3>
-          </Row>
-          <Row>
-            <SearchForm />
-          </Row>
-          <Row>
-            <TodoTable />
+      <SearchContext.Provider value={{ formData, setData }}>
+        <Container fluid="sm">
+          <Row className="justify-content-md-center">
+            <Col lg="9" md="11" sm="12">
+              <Row>
+                <Col><h2 className="mb-4 mt-4 fw-bold">Todos</h2></Col>
+              </Row>
+              <Row>
+                <Col><SearchForm /></Col>
+              </Row>
+              <Row>
+                <Col><TodoTable /></Col>
+              </Row>
+            </Col>
           </Row>
         </Container>
       </SearchContext.Provider>

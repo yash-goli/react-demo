@@ -1,4 +1,4 @@
-import { SearchFormData, SelectOptionsEnum, TodoPayLoad } from "models/Interfaces";
+import { SearchFormData, SelectOptionsEnum, TodoPayLoad } from "models/interfaces";
 import { ActionType } from "state/action-types";
 import { Action } from "state/actions";
 

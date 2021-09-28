@@ -1,4 +1,4 @@
-import { SearchFormData } from "models/Interfaces";
+import { SearchFormData } from "models/interfaces";
 import { Dispatch } from "redux";
 import { ActionType } from "../action-types";
 import { Action } from "../actions/index";

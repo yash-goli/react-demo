@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TodoItem } from "models/Interfaces";
+import { TodoItem } from "models/interfaces";
 
 async function getData(): Promise<TodoItem[]> {
     try {

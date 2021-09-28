@@ -1,5 +1,5 @@
 import { SearchContext } from "context/searchContext";
-import { SearchFormData, TodoItem, SelectOptionsEnum } from "models/Interfaces";
+import { SearchFormData, TodoItem, SelectOptionsEnum } from "models/interfaces";
 import React, { useEffect, useContext } from "react";
 import { Table, Alert } from "react-bootstrap";
 import { useSelector, useDispatch } from 'react-redux';

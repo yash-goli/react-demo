@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Col, Form, Row } from 'react-bootstrap';
-import { SelectOptionsEnum } from '../models/Interfaces';
+import { SelectOptionsEnum } from '../models/interfaces';
 import { SearchContext } from '../context/searchContext';
 
 function SearchForm() {
@@ -23,10 +23,10 @@ function SearchForm() {
       <Row className="mb-3">
         <Col sm>
           <Form.Group as={Row} className="mb-3" controlId="searchKeyword">
-            <Form.Label column>
+            <Form.Label column className="pe-0">
               Search:
             </Form.Label>
-            <Col>
+            <Col lg="9" md="8" sm="9" xs="10" className="p-sm-0">
               <Form.Control 
                 type="text" 
                 placeholder="Keyword..." 
@@ -38,10 +38,10 @@ function SearchForm() {
         </Col>
         <Col sm>
           <Form.Group as={Row} className="mb-3" controlId="completed">
-            <Form.Label column>
+            <Form.Label column className="pe-0">
               Completed:
             </Form.Label>
-            <Col>
+            <Col lg="8" md="8" sm="7" xs="9" className="ps-0">
               <Form.Select defaultValue="" name="completed" onChange={onChangeSelect}>
                 <option value="">-</option>
                 <option value="Yes">Yes</option>

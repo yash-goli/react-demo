@@ -2,3 +2,26 @@ body {
     font-family: 'Segoe UI', 'Roboto', sans-serif;
     margin: 0;
 }
+
+table td {
+    border: 1px solid #c3c3c3;
+}
+
+table > tbody > tr:nth-child(odd) > td {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+thead {
+    background-color: #a9a9a9;
+}
+
+thead tr th {
+    text-align: center;
+}
+
+.alert.alert-danger {
+    color: #fff;
+    background-color: #e43c3c;
+    border-color: #e43c3c;
+}
