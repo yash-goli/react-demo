@@ -16,6 +16,11 @@ export class TodoItem {
     completed!: boolean;
 }
 
+export class TodoPayLoad {
+    todoList!: TodoItem[];
+    error!: string;
+}
+
 export class SearchFormData {
     searchKeyword!: string;
     completed!: SelectOptionsEnum;

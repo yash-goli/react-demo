@@ -1,34 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Col, Form, Row } from 'react-bootstrap';
-import { SearchFormData, SelectOptionsEnum } from '../models/Interfaces';
-import { bindActionCreators } from 'redux';
-import { useDispatch } from 'react-redux';
-import { actionCreators } from "state";
+import { SelectOptionsEnum } from '../models/Interfaces';
+import { SearchContext } from '../context/searchContext';
 
 function SearchForm() {
-  const initialState: SearchFormData = {
-    searchKeyword: '',
-    completed: SelectOptionsEnum.NA
-  };
-
-  const dispatch = useDispatch();
-
-  const { todoSearch } = bindActionCreators(actionCreators, dispatch);
-
-  const [formData, setData] = useState(initialState);
+  const { formData, setData } = useContext(SearchContext);
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const data = { ...formData, searchKeyword: value };
     setData(data);
-    todoSearch(data);
   }
 
   const onChangeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
     const data = { ...formData, completed: value as SelectOptionsEnum };
     setData(data);
-    todoSearch(data);
   }
   
   return (

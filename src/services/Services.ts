@@ -7,7 +7,7 @@ async function getData(): Promise<TodoItem[]> {
         return response.data;
     } catch(e) {
         console.log(e);
-        return [];
+        throw e;
     }
 }
 
