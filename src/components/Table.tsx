@@ -21,11 +21,11 @@ function TodoTable() {
   }, []);
 
   return (<>
-    <ProcessTodoList todoList={searchState.todoList} searchFilter={formData}/>
+    <ProcessTodoList todoList={searchState.todoList} searchFilter={formData} />
   </>)
 }
 
-function ProcessTodoList(props: {todoList: TodoItem[], searchFilter: SearchFormData}) {
+function ProcessTodoList(props: { todoList: TodoItem[], searchFilter: SearchFormData }) {
   const titleCondition = (item: TodoItem) => {
     if (props.searchFilter.searchKeyword) {
       return item.title.includes(props.searchFilter.searchKeyword);
@@ -49,9 +49,13 @@ function ProcessTodoList(props: {todoList: TodoItem[], searchFilter: SearchFormD
 
   const filteredList = props.todoList.filter(filterFn);
 
-  return (<>{filteredList.length ? <TodoListTable todoList={filteredList}/> : <Alert variant="danger">
-    No results for the given search parameters!
-  </Alert>}</>);
+  return (<>
+    {filteredList.length ?
+      <TodoListTable todoList={filteredList} /> :
+      <Alert variant="danger" data-testid="alert">
+        No results for the given search parameters!
+      </Alert>}
+  </>);
 }
 
 function TodoListTable(props: { todoList: TodoItem[] }) {
@@ -64,7 +68,7 @@ function TodoListTable(props: { todoList: TodoItem[] }) {
           <th>Completed</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody data-testid="todo-list">
         <TodoRow todoList={props.todoList} />
       </tbody>
     </Table>

@@ -32,6 +32,7 @@ function SearchForm() {
                 placeholder="Keyword..." 
                 name="searchKeyword"
                 onChange={onChangeInput}
+                data-testid="search-keyword"
               />
             </Col>
           </Form.Group>
@@ -42,7 +43,7 @@ function SearchForm() {
               Completed:
             </Form.Label>
             <Col lg="8" md="8" sm="7" xs="9" className="ps-0">
-              <Form.Select defaultValue="" name="completed" onChange={onChangeSelect}>
+              <Form.Select defaultValue="" name="completed" onChange={onChangeSelect} data-testid="completed">
                 <option value="">-</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>

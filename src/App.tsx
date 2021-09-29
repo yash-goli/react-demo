@@ -21,7 +21,7 @@ function App() {
           <Row className="justify-content-md-center">
             <Col lg="9" md="11" sm="12">
               <Row>
-                <Col><h2 className="mb-4 mt-4 fw-bold">Todos</h2></Col>
+                <Col><h2 className="mb-4 mt-4 fw-bold" data-testid="header">Todos</h2></Col>
               </Row>
               <Row>
                 <Col><SearchForm /></Col>
