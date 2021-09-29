@@ -2,7 +2,7 @@ import { SearchFormData } from "models/interfaces";
 import { Dispatch } from "redux";
 import { ActionType } from "../action-types";
 import { Action } from "../actions/index";
-import getData from "services/Services";
+import getData from "../../services/services";
 
 export const todoSearch = (searchFormData: SearchFormData) => {
   return (dispatch: Dispatch<Action>) => {
