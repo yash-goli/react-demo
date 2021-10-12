@@ -6,9 +6,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { actionCreators } from "state";
 import { RootState } from "state/reducers";
+import { useParams } from "react-router-dom";
 
 function TodoTable() {
   const { formData } = useContext(SearchContext);
+
+  const { userId } = useParams<{userId: string}>();
 
   const searchState = useSelector((state: RootState) => state.todoList);
 
@@ -17,7 +20,7 @@ function TodoTable() {
   const { fetchTodoList } = bindActionCreators(actionCreators, dispatch);
 
   useEffect(() => {
-    fetchTodoList();
+    fetchTodoList(userId);
   }, []);
 
   return (<>

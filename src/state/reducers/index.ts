@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
-import searchReducer, { todoListReducer } from './searchReducer';
+import searchReducer, {todoListReducer, usersListReducer} from './searchReducer';
 
 const reducers = combineReducers({
   search: searchReducer,
-  todoList: todoListReducer
+  todoList: todoListReducer,
+  userList: usersListReducer
 });
 
 export default reducers;

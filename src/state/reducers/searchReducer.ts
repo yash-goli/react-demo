@@ -1,4 +1,4 @@
-import { SearchFormData, SelectOptionsEnum, TodoPayLoad } from "models/interfaces";
+import {SearchFormData, SelectOptionsEnum, TodoPayLoad, UsersPayLoad} from "models/interfaces";
 import { ActionType } from "state/action-types";
 import { Action } from "state/actions";
 
@@ -9,6 +9,11 @@ const initialState: SearchFormData = {
 
 const initialTodoState: TodoPayLoad = {
   todoList: [],
+  error: '',
+};
+
+const initialUsersState: UsersPayLoad = {
+  usersList: [],
   error: '',
 };
 
@@ -27,6 +32,17 @@ export const todoListReducer = (state = initialTodoState, action: Action): TodoP
       return {todoList: action.payload.todoList, error: ''};
     case ActionType.GET_TODO_ERROR:
       return {todoList: [], error: action.payload.error};
+    default:
+      return state;
+  }
+}
+
+export const usersListReducer = (state = initialUsersState, action: Action): UsersPayLoad => {
+  switch (action.type) {
+    case ActionType.GET_USER_SUCCESS:
+      return {usersList: action.payload.usersList, error: ''};
+    case ActionType.GET_USER_ERROR:
+      return {usersList: [], error: action.payload.error};
     default:
       return state;
   }

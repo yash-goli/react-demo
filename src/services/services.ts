@@ -1,9 +1,9 @@
 import axios from "axios";
-import { TodoItem } from "models/interfaces";
+import {TodoItem, User} from "models/interfaces";
 
-async function getData(): Promise<TodoItem[]> {
+export async function getData(userId: string): Promise<TodoItem[]> {
     try {
-        const response = await axios.get<TodoItem[]>(`https://jsonplaceholder.typicode.com/todos`);
+        const response = await axios.get<TodoItem[]>(`https://jsonplaceholder.typicode.com/todos?userId=${userId}`);
         return response.data;
     } catch(e) {
         console.log(e);
@@ -11,4 +11,12 @@ async function getData(): Promise<TodoItem[]> {
     }
 }
 
-export default getData;
+export async function getUsers(): Promise<User[]> {
+    try {
+        const response = await axios.get<User[]>(`https://jsonplaceholder.typicode.com/users`);
+        return response.data;
+    } catch(e) {
+        console.log(e);
+        throw e;
+    }
+}

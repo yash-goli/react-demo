@@ -1,4 +1,4 @@
-import { SearchFormData, TodoPayLoad } from "models/interfaces";
+import { SearchFormData, TodoPayLoad, UsersPayLoad } from "models/interfaces";
 import { ActionType } from "../action-types";
 
 interface SearchAction {
@@ -16,4 +16,14 @@ interface GetTodoErrorAction {
   payload: TodoPayLoad
 }
 
-export type Action = SearchAction | GetTodoSuccessAction | GetTodoErrorAction;
+interface GetUsersSuccessAction {
+  type: ActionType.GET_USER_SUCCESS,
+  payload: UsersPayLoad
+}
+
+interface GetUsersErrorAction {
+  type: ActionType.GET_USER_ERROR,
+  payload: UsersPayLoad
+}
+
+export type Action = SearchAction | GetTodoSuccessAction | GetTodoErrorAction | GetUsersSuccessAction | GetUsersErrorAction;

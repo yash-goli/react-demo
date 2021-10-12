@@ -16,8 +16,20 @@ export class TodoItem {
     completed!: boolean;
 }
 
+export class User {
+    id!: number;
+    name!: string;
+    username!: string;
+    email!: string;
+}
+
 export class TodoPayLoad {
     todoList!: TodoItem[];
+    error!: string;
+}
+
+export class UsersPayLoad {
+    usersList!: User[];
     error!: string;
 }
 
